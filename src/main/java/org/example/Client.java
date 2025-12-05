@@ -17,14 +17,19 @@ public class Client {
 
         String message;
 
-        do {
+        while (true) {
             message = systemReader.readLine();
+
             writer.write(message + "\n");
             writer.flush();
-        } while (!message.equals("/exit"));
 
-        String serverMessage = reader.readLine();
-        System.out.println("server says: " + serverMessage);
+            if (message.equals("/exit")) {
+                break;
+            }
+
+            String serverMessage = reader.readLine();
+            System.out.println("server says: " + serverMessage);
+        }
 
         clientSocket.close();
     }
