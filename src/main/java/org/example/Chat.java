@@ -27,7 +27,7 @@ public class Chat {
         input.setFont(new Font("Times New Roman", Font.BOLD, 32));
         input.setPreferredSize(new Dimension(100, 60));
 
-        //Темка со стилями
+        //Темка со стилями, эта темка для управлением стилей в чат
         StyledDocument document = chat.getStyledDocument();
 
 
