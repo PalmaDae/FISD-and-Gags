@@ -11,7 +11,6 @@ public class Client {
         BufferedReader reader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
         BufferedWriter writer = new BufferedWriter(new PrintWriter(clientSocket.getOutputStream()));
 
-        System.out.println("say something");
 
         new Thread(() -> {
             String message;
@@ -26,8 +25,8 @@ public class Client {
         }).start();
 
         while (true) {
-            String msg = systemReader.readLine();
             System.out.print("Your message: ");
+            String msg = systemReader.readLine();
             writer.write(msg + "\n");
             writer.flush();
 
